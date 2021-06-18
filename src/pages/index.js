@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import whip from '../assets/images/whip.jpg';
+import ProductContext from '../context/product-context';
 
 const HeroContainer = styled.div`
   display: grid;
@@ -58,6 +59,9 @@ const HeroContainer = styled.div`
 `;
 
 export default function HomePage() {
+const {collections} = React.useContext(ProductContext);
+console.log(collections);
+
   return (
     <HeroContainer>
       <header className="hero" />
