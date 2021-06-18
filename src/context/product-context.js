@@ -1,21 +1,25 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
-
+//tomorrow we stylin the collections tiles
 const query = graphql`
     {
-        allShopifyCollection {
+        allShopifyCollection(sort: {fields: title, order: ASC}) {
             edges {
               node {
-                    products {
-                        ...ShopifyProductFields
-                        }
-                    title
-                    description
-                
+                title
+                description
+                products {
+                  title
+                  shopifyId
+                  description
+                  images {
+                    gatsbyImageData
+                  }
                 }
+              }
             }
-        }
+          }
     }
 `;
 

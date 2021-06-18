@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import whip from '../assets/images/whip.jpg';
+import { HomePageCollectionsGrid } from '../components/HomePageCollectionsGrid';
 import ProductContext from '../context/product-context';
 
 const HeroContainer = styled.div`
@@ -63,6 +64,7 @@ const {collections} = React.useContext(ProductContext);
 console.log(collections);
 
   return (
+    <div>
     <HeroContainer>
       <header className="hero" />
 
@@ -74,5 +76,10 @@ console.log(collections);
         <h2>IT'S HOOKED UP TO SHOPIFY</h2>
       </div>
     </HeroContainer>
+    
+       <HomePageCollectionsGrid collections={collections.filter(collection => collection.title !== 'frontpage')}/>
+    </div>
+   
+    
   );
 }
