@@ -1,6 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
+
+
 //tomorrow we stylin the collections tiles
 const query = graphql`
     {
@@ -9,6 +11,9 @@ const query = graphql`
               node {
                 title
                 description
+                image {
+                  gatsbyImageData
+                }
                 products {
                   title
                   shopifyId
