@@ -8,6 +8,8 @@ import {StoreContext} from '../context/store-context';
 import {navigate, useLocation} from '@reach/router';
 import queryString from 'query-string';
 import { ProductQuantityAdder } from '../components/ProductQuantityAdder';
+import { Button } from '../components/Button';
+
 
 
 const Price = styled.div`
@@ -39,6 +41,7 @@ text-align: left;
 const BikeProductTemplateStyled = styled.div`
         display: grid;
         grid-template-columns: 1fr;
+        margin-top: 1em;
         
 
         @media(min-width: 768px){
@@ -136,6 +139,9 @@ const handleVariantChange = (e) => {
 
 
    return (
+    <>
+    <Button onClick={()=>navigate(-1)}>Back to products</Button>
+
         <BikeProductTemplateStyled>
             <div>
                 <div>
@@ -175,11 +181,15 @@ const handleVariantChange = (e) => {
            
                 </div>
             </div>
+            
             <div>
+           
                 <ImageGallery   selectedVariantImageId={selectedVariant?.image.src} key={props.data.shopifyProduct.id} id={props.data.shopifyProduct.id} title={props.data.shopifyProduct.title} images={props.data.shopifyProduct.images} />
                 
             </div>
+            
         </BikeProductTemplateStyled>
+        </>
        
        );
 };

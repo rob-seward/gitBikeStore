@@ -6,20 +6,42 @@ import React from 'react';
 //tomorrow we stylin the collections tiles
 const query = graphql`
     {
-        allShopifyCollection(sort: {fields: title, order: ASC}) {
+        allShopifyCollection(sort: {fields: title, order: DESC}) {
             edges {
               node {
                 title
                 description
                 image {
-                  gatsbyImageData
+                  gatsbyImageData (
+                    height: 300
+                    placeholder: "Blurred"
+                    aspectRatio: 1
+                    layout: CONSTRAINED
+                  )
                 }
                 products {
                   title
                   shopifyId
                   description
+                  id
+                  handle
+                  priceRangeV2 {
+                    minVariantPrice {
+                      amount
+                    }
+                  }
+                  variants {
+                    title
+                    availableForSale
+                    id
+                  }
                   images {
-                    gatsbyImageData
+                    gatsbyImageData(
+                      height: 300
+                    placeholder: "Blurred"
+                    aspectRatio: 1
+                    layout: CONSTRAINED
+                    )
                   }
                 }
               }

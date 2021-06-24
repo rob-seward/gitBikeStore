@@ -6,7 +6,7 @@ import ProductContext from '../context/product-context';
 
 const HeroContainer = styled.div`
   display: grid;
-  grid-gap: 5px;
+  grid-gap: 1em;
   grid-template-areas:
     'hero hero cta1'
     'hero hero cta2';
@@ -34,20 +34,24 @@ const HeroContainer = styled.div`
   .cta1 {
     background: linear-gradient(to right, #2193b0, #6dd5ed);
     grid-area: cta1;
+   
   }
 
   .cta2 {
     grid-area: cta2;
     background: linear-gradient(to right, #2193b0, #6dd5ed);
+    
   }
 
   @media (max-width: 700px) {
     grid-template-areas:
       'hero hero'
       'cta1 cta2';
+      
     .cta {
       font-size: 0.5rem;
-      padding: 2rem;
+      padding: 1.5rem;
+      
     }
   }
 
@@ -61,7 +65,7 @@ const HeroContainer = styled.div`
 
 export default function HomePage() {
 const {collections} = React.useContext(ProductContext);
-console.log(collections);
+
 
   return (
     <div>

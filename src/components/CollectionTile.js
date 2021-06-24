@@ -5,28 +5,26 @@ import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from 'gatsby-background-image'
 
 
-
 const CollectionTileStyled = styled.div`
-height: 300px;
+
 max-height: 100 vh
 display: flex;
-
 position: relative;
-margin-bottom: 5px;
-border: 1px solid black;
 
 >div:first-child {
     flex-grow: 1;
-    padding: 100px;
+    padding: 50px;
     overflow: hidden;
     color: white;
-}
+    }
+`;
 
+const TitleStyled = styled.h2`
+border: ${props =>props.sale?"2px solid white; text-align: center; padding 15px;":"none"};
 `;
 
 
-
-export function CollectionTile({description, title, backgroundImage}){
+export function CollectionTile({description, title, backgroundImage, sale}){
     
     const image = getImage(backgroundImage);
     const bgImage = convertToBgImage(image);
@@ -37,8 +35,9 @@ export function CollectionTile({description, title, backgroundImage}){
             {...bgImage}
             preserveStackingContent
          >
-             <h1>{title}</h1>
-            <p> {description}</p>
+            <TitleStyled sale={sale}>{title}</TitleStyled>
+            <p > {description}</p>
+            
             
         </BackgroundImage>
             

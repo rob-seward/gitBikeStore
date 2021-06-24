@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import StoreContext from '../context/store-context';
 import { RemoveLineItem } from './RemoveLineItem';
 import { QuantityAdjuster } from './QuantityAdjuster';
+import { Button } from '../components/Button';
+import {navigate, useLocation} from '@reach/router';
 
 const CartHeaderStyled = styled.div`
 display: grid;
@@ -23,6 +25,14 @@ grid-template-columns: 5fr 1fr 40px;
         text-align: right;
     }
 }
+`;
+
+const FooterCheckoutStyled = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+border-top: 1px solid black;
+padding: 10px;
+
 `;
 
 const CartItemStyled = styled.div`
@@ -110,6 +120,25 @@ export function CartContent() {
                        <span>£{checkout?.totalPrice}</span>
                        </div>
                    </CartFooterStyled>
+                
+                {!checkout?.lineItems && (
+                    <h4>Nothing in the cart</h4>
+                )}
+
+                   <FooterCheckoutStyled>
+                        <div>
+                            <Button onClick={()=>navigate(-1)}>Continue Shopping</Button>
+                        </div>
+                        <div>
+               {!!checkout?.webUrl && (
+                            <Button checkoutButt onClick={()=>window.location.href = checkout.webUrl}>
+                                Checkout
+                            </Button>
+               )}
+
+               </div>
+                   </FooterCheckoutStyled>
+                   
             </div>
             
         </section>

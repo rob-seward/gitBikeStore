@@ -12,7 +12,7 @@ const HeaderStyled = styled.div`
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
-  border-bottom: 3px double #ebe9eb;
+  border-bottom: 1em  #ebe9eb;
   justify-items: center;
   h1 {
     place-self: start;

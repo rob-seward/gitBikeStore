@@ -9,6 +9,8 @@ const fullWidthStyles = ({fullWidth}) => {
     }
 }
 
+
+
 export const Button = styled.button`
     outline: none;
     padding: 0 10px;
@@ -36,5 +38,6 @@ export const Button = styled.button`
         cursor:not-allowed;
         color:#999;
     }
+
     
 `;
