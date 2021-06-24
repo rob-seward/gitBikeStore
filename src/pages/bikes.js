@@ -48,11 +48,6 @@ margin: 20px;
   flex-grow: 1;
 }
 
-.bmxDetails {
-  display: grid;
-  line-height: .5px;
-}
-
 .detailsLink {
   >${StyledLink} {
   border: 1px solid black;
@@ -87,7 +82,7 @@ function BmxBikeTile({bmx}) {
               <GatsbyImage image={mainImage} alt='arse'/>
           </div>
 
-        <div className="bmxDetails">
+        <div>
             <div>
               <h2>{bmx.title}</h2>
             </div>
