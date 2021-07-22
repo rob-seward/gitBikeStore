@@ -1,17 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
+
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import {Cart} from '../components/Cart';
-
-
-
+import { Button } from '../components/Button';
 
 const NavStyled = styled.nav`
   background: white;
-  height: 100px;
+  height: 20px;
   grid-column: 3;
-  padding-right: 20px;
-  font-size: 0.6em;
+  padding-right: 0px;
+  font-size: 0.6em; 
   
 
   ul {
@@ -19,6 +18,8 @@ const NavStyled = styled.nav`
     grid-auto-flow: column;
     list-style: none;
     gap: 1rem;
+    justify-items: end;
+    align-items: start;
     
   }
 
@@ -30,16 +31,50 @@ const NavStyled = styled.nav`
     }
   }
 
+  @media(max-width: 500px){
+   display: none;
   
+  }
 
   
 `;
 
+const MenuButtonStyled= styled.div`
+@media(min-width:500px){
+  display: hidden;
+}
+@media(max-width:499px){
+  display: block;
+  
+}
+
+`;
+
 export default function Nav() {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    
+    <>
+    <MenuButtonStyled>
+    <Button onClick={()=>console.log('arse')}>
+      <span class="open">☰</span>
+      <span class="close">×</span>
+      Menu
+    </Button>
+</MenuButtonStyled>
     <NavStyled className="menu">
+
       <ul id="menu-list">
+      
         <li className="menu bike-nav">
           <Link to="/bikes/">BIKES</Link>
         </li>
@@ -53,11 +88,13 @@ export default function Nav() {
         <li className="menu shop-nav">
           <Link to="/products/">SHOP</Link>
         </li>
-        <Cart />
+        
+        
       </ul>
      
       
       
     </NavStyled>
+    </>
   );
 }

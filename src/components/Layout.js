@@ -6,6 +6,10 @@ import Footer from './Footer';
 import GlobalStyles from '../styles/GlobalStyles';
 import Header from './Header';
 
+
+
+
+
 const SiteBorderStyles = styled.div`
   margin: 1rem 1rem 1rem 1rem;
   /*margin-top: clamp(2rem, 10vw, 12rem);
@@ -25,6 +29,7 @@ const SiteBorderStyles = styled.div`
 export default function Layout({ children }) {
   return (
     <>
+    
       <GlobalStyles />
       <SiteBorderStyles>
         

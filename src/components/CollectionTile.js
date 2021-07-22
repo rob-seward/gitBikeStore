@@ -3,6 +3,17 @@ import styled from 'styled-components';
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from 'gatsby-background-image'
+import {StyledLink} from './StyledLink';
+
+const CollectionLinkStyled = styled(StyledLink).attrs(()=>({
+    to:'/bikes',
+  }))`
+  color: white;
+  text-decoration: none;
+  
+  }
+  
+  `;
 
 
 const CollectionTileStyled = styled.div`
@@ -20,7 +31,7 @@ position: relative;
 `;
 
 const TitleStyled = styled.h2`
-border: ${props =>props.sale?"2px solid white; text-align: center; padding 15px;":"none"};
+border: ${props =>props.sale?"1px solid white; text-align: center; padding 30px;":"none; text-align: center; "};
 `;
 
 
@@ -35,8 +46,10 @@ export function CollectionTile({description, title, backgroundImage, sale}){
             {...bgImage}
             preserveStackingContent
          >
+         <CollectionLinkStyled>
             <TitleStyled sale={sale}>{title}</TitleStyled>
             <p > {description}</p>
+            </CollectionLinkStyled>
             
             
         </BackgroundImage>

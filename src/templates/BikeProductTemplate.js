@@ -85,9 +85,11 @@ export const query = graphql`
 
 
 export default function BikeProductTemplate(props){
+    
     //In this order
     //1. I got the product from shopify by the handle
   const { getProductById } = React.useContext(StoreContext);
+  
   // 2. poped the returned product into state
   const [product, setProduct] = React.useState(null);
   // 3. get the selectedVaraint from the event listener and set it to state

@@ -9,17 +9,26 @@ const CartWrapperStyled = styled(StyledLink).attrs(()=>({
     to:'/cart',
 }))`
     
+    display: flex;
+    font-size: .7em;
+    color: black;
+    justify-self: end;
 
-display: flex;
+    >div:last-child {
+        padding-left: .5em;
+    }
 
+    @media(max-width: 370px) {
+        display: none;
+    }
 
->div:last-child {
-    padding-left: .5em;
-    
-}
+    @media(min-width: 371px) {
+        grid-column: 3;
+    }
+
 `;
 
-export function Cart() {
+export default function Cart() {
     const {checkout} = useContext(StoreContext);
     console.log(checkout, 'on the cart')
     let totalQuantity = 0;

@@ -17,17 +17,8 @@ const GlobalStyles = createGlobalStyle`
     color: #000000;
   }
 
-  @media (max-width: 700px) {
-  .top {
-    grid-template-areas:
-      "hero hero"
-      "cta1 cta2"
-  }
-  /* About */
-  .about {
-    grid-template-columns: 1fr;
-  }
-}
+
+
 
 
   

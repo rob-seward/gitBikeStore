@@ -2,11 +2,15 @@ import React from 'React';
 import {CollectionTile} from './CollectionTile';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
+import {Link} from 'gatsby';
+
 
 
 const HomePageTilesStyled = styled.div`
 display: grid;
 cursor: pointer;
+overflow: hidden;
+margin: 0px;
 
 h2 {
     font-size: 4.5em;
@@ -23,7 +27,7 @@ p {
 >div:first-child {
 height: 300px;
 overflow: hidden;
-margin-top: 5px;
+
 }
 
 @media (min-width: 500px) {
@@ -49,8 +53,7 @@ margin-top: 5px;
       div {
         height: 200px;
         overflow: hidden;
-        margin-top: 5px;
-        padding-left: 5px;
+        
         }
       
   }
@@ -64,8 +67,11 @@ export function HomePageCollectionsGrid({collections}) {
     const remainingCollections  = collections.filter( collection => collection.title !== 'Sale');
     
     return (
+    
+        
         <HomePageTilesStyled> 
             {!! saleCollection && (
+                
                 <CollectionTile 
                 sale
                 title={saleCollection.title}
@@ -73,6 +79,7 @@ export function HomePageCollectionsGrid({collections}) {
                backgroundImage={saleCollection.image}
                 key={saleCollection.shopifyId}
                 />
+                
             )}
             {remainingCollections.map(collection => (
                 <CollectionTile 
@@ -84,5 +91,6 @@ export function HomePageCollectionsGrid({collections}) {
             ))}
 
         </HomePageTilesStyled>
+        
     );
 }

@@ -2,14 +2,15 @@ require("dotenv").config({path: `.env`,})
 
 module.exports = {
   siteMetadata: {
-    siteTitle: "gatsby-starter-shopify",
-    siteTitleDefault: "gatsby-starter-shopify by @GatsbyJS",
-    siteUrl: "https://shopify-demo.gatsbyjs.com",
+    title: "GitBikeCo",
+    siteTitleDefault: "git-bike-co",
+    siteUrl: "https://donthaveoneyet.com",
     hrefLang: "en",
-    siteDescription:
-      "A Gatsby starter using the latest Shopify plugin showcasing a store with product overview, individual product pages, and a cart.",
+    viewport: "width=device-width, initial-scale=1.0, minimum-scale=1.0",
+    description:
+      "Gatsby V3 shopify rc starter modfied - store / product context and my own sample products",
     siteImage: "/default-og-image.jpg",
-    twitter: "@gatsbyjs",
+    twitter: "@blah",
   },
   flags: {
     FAST_DEV: true,
@@ -34,6 +35,7 @@ module.exports = {
         path: `${__dirname}/src/assets/images/`,
       },
     },
+    
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
