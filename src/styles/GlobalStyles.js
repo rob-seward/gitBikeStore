@@ -10,20 +10,15 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    
     font-family: 'Maven Pro', sans-serif;
     font-size: .8em;
     letter-spacing: .1em;
     line-height: 16px;
     color: #000000;
+    margin: 0px;
   }
 
-
-
-
-
-  
-
- 
 
 `;
 

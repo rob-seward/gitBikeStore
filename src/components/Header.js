@@ -11,15 +11,19 @@ import Cart from './Cart';
 
 const HeaderStyled = styled.div`
   background-color: white;
+  line-height: 10px;
   display: grid;
   grid-gap: 0rem;
   grid-template-columns: 1fr 1fr 1fr;
   border-bottom: 1em  #ebe9eb;
   align-self: start;
+  overflow: hidden;
  
   @media(max-width: 370px){
     >div{
       grid-column: 2;
+     
+      
     }
   }
 
@@ -30,13 +34,12 @@ const HeaderStyled = styled.div`
       padding-right: .4em;
     }
   }
+
+ 
+
+ 
   
-  @media(min-width: 371px){
-    >div {
-      grid-column: 1;
-      padding-right: .4em;
-    }
-  }
+ 
 
 
 `;

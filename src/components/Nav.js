@@ -4,13 +4,17 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import {Cart} from '../components/Cart';
 import { Button } from '../components/Button';
+import MobileNav from './MobileNav';
+
+
 
 const NavStyled = styled.nav`
   background: white;
   height: 20px;
-  grid-column: 3;
+  grid-column: 2;
   padding-right: 0px;
-  font-size: 0.6em; 
+  font-size: 0.6em;
+  grid-row: 1;
   
 
   ul {
@@ -20,6 +24,7 @@ const NavStyled = styled.nav`
     gap: 1rem;
     justify-items: end;
     align-items: start;
+
     
   }
 
@@ -33,44 +38,26 @@ const NavStyled = styled.nav`
 
   @media(max-width: 500px){
    display: none;
-  
+   
   }
 
   
-`;
 
-const MenuButtonStyled= styled.div`
-@media(min-width:500px){
-  display: hidden;
-}
-@media(max-width:499px){
-  display: block;
   
-}
-
 `;
+
+
+
 
 export default function Nav() {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <>
-    <MenuButtonStyled>
-    <Button onClick={()=>console.log('arse')}>
-      <span class="open">☰</span>
-      <span class="close">×</span>
-      Menu
-    </Button>
-</MenuButtonStyled>
+   
+    <MobileNav />
+    
     <NavStyled className="menu">
 
       <ul id="menu-list">
@@ -92,8 +79,6 @@ export default function Nav() {
         
       </ul>
      
-      
-      
     </NavStyled>
     </>
   );

@@ -17,11 +17,14 @@ grid-area: helmet;
 
 const LogoStyled = styled.div`
 
+
   display: grid;
    grid-template-columns: 1fr 1fr;
    grid-template-areas:
     "helmet git"
     "bikeco bikeco";
+
+  
 
     @media(min-width:371px) {
         justify-self: start;
