@@ -53,6 +53,7 @@ const LogoStyled = styled.div`
        
         font-size: 1.2em;
         line-height: .3em;
+        margin-top: .2em;
         margin-bottom: .5em;
         
     }

@@ -4,6 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from 'styled-components';
 import {StyledLink} from '../components/StyledLink';
 import { Link } from "gatsby";
+import SEO from '../components/SEO';
+
 
 
 const FrameContainerStyled = styled.div`
@@ -59,6 +61,8 @@ margin: 20px;
 
 function FrameTile({frame}) {
 return (
+  <>
+  <SEO title="Frames"/>
   <FrameTiledStyled>
   <div>
     <GatsbyImage alt="something" image={getImage(frame.images[0])}/>
@@ -78,6 +82,7 @@ return (
             <StyledLink to={`/products/${frame.handle}`}>view</StyledLink>
           </div>
   </FrameTiledStyled>
+  </>
 )
 };
 
@@ -85,10 +90,10 @@ return (
 
 export default function FramesPage() {
   const { collections } = React.useContext(ProductContext);
-  console.log(collections);
+  
 
   const {products: frames} = collections.find( frame => frame.title === 'Frames');
-  console.log(frames);
+  
 
   return (
     <FrameContainerStyled>

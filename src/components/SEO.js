@@ -29,6 +29,7 @@ export default function SEO({children, title, description}) {
     return(
         <Helmet titleTemplate={`%s | ${site.siteMetadata.title}`}>
             <html lang="en"/>
+            <link rel="icon" href="https://fav.farm/👾" />
             <title>{title}</title>
            
             

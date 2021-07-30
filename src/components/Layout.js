@@ -19,7 +19,7 @@ export default function Layout({ children }) {
   return (
     <>
     
-      <GlobalStyles />
+    <GlobalStyles />
       <SiteBorderStyles>
         
           <Header />

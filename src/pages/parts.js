@@ -81,7 +81,7 @@ function PartTile({part}){
 export default function PartsPage() {
   const { collections } = React.useContext(ProductContext);
 const {products: parts} = collections.find(part => part.title === 'Parts');
-console.log(parts);
+
   
   return (
     <PartsContainerStyled>

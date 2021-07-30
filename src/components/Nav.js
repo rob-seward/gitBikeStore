@@ -73,7 +73,7 @@ export default function Nav() {
           <Link to="/parts/">PARTS</Link>
         </li>
         <li className="menu shop-nav">
-          <Link to="/products/">SHOP</Link>
+          <Link to="/contact/">CONTACT</Link>
         </li>
         
         

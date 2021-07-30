@@ -8,6 +8,7 @@ import ProductContext from '../context/product-context';
 import SEO from '../components/SEO';
 import {StyledLink} from '../components/StyledLink';
 import GlobalStyles from '../styles/GlobalStyles';
+import { QuestionPopUp } from '../components/QuestionPopUp';
 
 const CtaStyled = styled(StyledLink).attrs(()=>({
   to:'/bikes',
@@ -155,6 +156,7 @@ const {collections} = React.useContext(ProductContext);
     
        <HomePageCollectionsGrid collections={collections.filter(collection => collection.title !== 'frontpage')}/>
     </div>
+    
     </>
    
     

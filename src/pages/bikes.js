@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from 'styled-components';
 import {StyledLink} from '../components/StyledLink';
 import { Link } from "gatsby";
-
+import SEO from '../components/SEO';
 
 
 const BmxContainerStyled = styled.div`
@@ -71,11 +71,11 @@ margin: 20px;
 
 
 function BmxBikeTile({bmx}) {
-  console.log(bmx);
   const mainImage = getImage(bmx.images[0]);
   
   return (
-    
+    <>
+    <SEO title="Bikes"/>
     <BmxBikeTiledStyled>
 
           <div>
@@ -100,9 +100,8 @@ function BmxBikeTile({bmx}) {
             <StyledLink to={`/products/${bmx.handle}`}>view</StyledLink>
           </div>
           
-         
-          
     </BmxBikeTiledStyled>
+    </>
       
     
     

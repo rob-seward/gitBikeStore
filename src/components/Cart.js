@@ -45,7 +45,7 @@ const CartWrapperStyled = styled(StyledLink).attrs(()=>({
 
 export default function Cart() {
     const {checkout} = useContext(StoreContext);
-    console.log(checkout, 'on the cart')
+    
     let totalQuantity = 0;
     checkout.lineItems.forEach(lineItem => {
         totalQuantity = totalQuantity + lineItem.quantity;

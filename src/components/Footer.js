@@ -8,7 +8,7 @@ const FooterStyled = styled.div`
 export default function Footer() {
   return (
     <FooterStyled>
-      <p>&copy; Git Bikes {new Date().getFullYear}</p>
+      <p>&copy;GitBikes {new Date().getFullYear}</p>
     </FooterStyled>
   );
 }
