@@ -16,7 +16,7 @@ const defaultState = {
   cart: {},
 }
 
-console.log(defaultState,'from context');
+
 
 export const StoreContext = React.createContext(defaultState)
 export default StoreContext;
@@ -73,7 +73,7 @@ const getProductById = async (handle)=> {
   }*/
 
   const updateLineItem = async ({ variantId, quantity }) => {
-    console.log('I amat the store')
+    
     // if no checkout id, create a new checkout
     let newCheckout = checkout || (await client.checkout.create());
 

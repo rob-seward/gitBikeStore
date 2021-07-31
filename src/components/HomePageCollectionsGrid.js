@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import {CollectionTile} from './CollectionTile';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components';

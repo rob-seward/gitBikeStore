@@ -1,6 +1,6 @@
 import React,{useState}from 'react';
 import styled from 'styled-components';
-import { fallbackExchangeIO } from 'urql';
+
 import {Button} from '../components/Button';
 import StoreContext from 'context/store-context';
 

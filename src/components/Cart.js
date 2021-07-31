@@ -47,7 +47,7 @@ export default function Cart() {
     const {checkout} = useContext(StoreContext);
     
     let totalQuantity = 0;
-    checkout.lineItems.forEach(lineItem => {
+    checkout?.lineItems.forEach(lineItem => {
         totalQuantity = totalQuantity + lineItem.quantity;
     })
         
