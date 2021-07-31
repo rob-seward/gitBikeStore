@@ -101,7 +101,7 @@ ul {
     
 }
 li {
-    padding: 10px;
+    padding: 15px;
 }
 
 }
@@ -136,7 +136,7 @@ return (
                 <MobileNavPartLinkStyled to="/parts">PARTS</MobileNavPartLinkStyled>
             </li>
             <li>
-                <MobileNavShopLinkStyled to="/shop">SHOP</MobileNavShopLinkStyled>
+                <MobileNavShopLinkStyled to="/contact">CONTACT</MobileNavShopLinkStyled>
             </li>
         </ul>
     </MenuLinks>
