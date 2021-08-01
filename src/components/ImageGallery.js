@@ -4,22 +4,15 @@ import styled from 'styled-components';
 
 export const ImageThumbnailWrapper = styled.div`
   cursor: pointer;
-  border: 4px solid ${props => (props.isActive ? 'blue' : '#eee')};
+  border: 2px solid ${props => (props.isActive ? 'black' : '#eee')};
   
 `;
 
 
 const ImageGalleryWrapper = styled.div`
- >div:first-child{
-     
-    border: 5px solid pink;
-   
-    
-    
-}
 
 >div:last-child{
-    border: 5px solid #bada55;
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;

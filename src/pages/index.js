@@ -139,18 +139,16 @@ const {collections} = React.useContext(ProductContext);
     <HeroContainerStyled>
       
       <HomePageHero rotate={90} />
-    
-
 
       <div className="cta cta1">
       <CtaStyled>
-        <h2>CHECKOUT OUR BIKES</h2>
+        <h2>DEMO BIKE STORE</h2>
       </CtaStyled>
         
       </div>
 
       <div className="cta cta2">
-        <h2>HOOKED UP TO SHOPIFY</h2>
+        <h2>GATSBY V3 SHOPIFY</h2>
       </div>
     </HeroContainerStyled>
     

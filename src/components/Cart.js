@@ -37,8 +37,8 @@ const CartWrapperStyled = styled(StyledLink).attrs(()=>({
 
     @media(max-width: 500px) {
         padding-top: 1em;
-        grid-column: 3;
-        grid-row: 2;
+        grid-column: 2;
+        grid-row: 1;
     }
 
 `;
@@ -56,7 +56,7 @@ export default function Cart() {
         <CartWrapperStyled>
             <FaShoppingCart size="1.2em"/>
                 <div>
-                {totalQuantity} item(s) / £{checkout?.totalPrice || '0.00'}
+                {totalQuantity} items £{checkout?.totalPrice || '0.00'}
                 </div>
         </CartWrapperStyled>
     )

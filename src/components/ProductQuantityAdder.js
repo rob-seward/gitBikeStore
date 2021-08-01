@@ -8,7 +8,7 @@ import StoreContext from 'context/store-context';
 const ProductQuantityAdderStyled = styled.div`
 margin-top: 20px;
 margin-bottom: 20px;
-padding: .5em;
+padding-top: 1.2em;
 >strong {
     display: block;
     margin-bottom: 10px;
@@ -17,13 +17,15 @@ padding: .5em;
 >form {
     display: flex;
 }
+
 `;
 
 const Input = styled.input`
     border: 1px sold #ccc;
     display: block;
     font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    
     border-radius: 0;
     padding: 5px 10px;
     height:44px;
@@ -32,6 +34,10 @@ const Input = styled.input`
     &:focus {
         border-color: black;
     }
+  
+}
+
+   
 `;
 
 

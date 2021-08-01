@@ -84,24 +84,28 @@ flex-direction: column;
 justify-content: right;
 align-items: center;
 padding-top: 20px;
+padding-right: .5em;
+padding-bottom: .5em;
 
 height: 20vh;
 width:35%;
-background: transparent;
+background: white;
 position: fixed;
 top: 50;
 right: 0;
 z-index: 7;
 transition: transform 300ms;
 transform: ${({nav}) => (nav? "translateX(0%)" : "translateX(100%)")};
-font-size: 1em;
+font-size: 1.2em;
+
 
 ul {
     list-style: none;
     
 }
 li {
-    padding: 15px;
+    
+    padding: 10px;
 }
 
 }

@@ -11,6 +11,8 @@ display: grid;
 grid-template-columns: 2fr 1fr 2fr 1fr 40px;
 font-weight: bold;
 border-bottom: 1px solid black;
+
+
 >div {
     padding: 2em;
 }
@@ -54,6 +56,12 @@ grid-template-columns: 2fr 1fr 2fr 1fr 40px;
 }
 `;
 
+const SectionStyled = styled.section`
+.yourCart {
+    font-size: 1em;
+}
+`;
+
 
 
 
@@ -71,10 +79,9 @@ export function CartContent() {
 
 
 
-    console.log(checkout);
     return (
-        <section>
-            <h2>Your Cart</h2>
+        <sectionStyled>
+            <h2 className="youCart">Your Cart</h2>
             <div>
                 <CartHeaderStyled>
                     <div>
@@ -141,7 +148,7 @@ export function CartContent() {
                    
             </div>
             
-        </section>
+        </sectionStyled>
     )
 }
 

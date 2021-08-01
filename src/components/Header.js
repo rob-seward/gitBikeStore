@@ -31,8 +31,10 @@ const HeaderStyled = styled.div`
     >div{
       grid-column: 1;
       align-self: start;
-      padding-right: .4em;
+      
+      padding-right: 3.2em;
     }
+    
   }
 
  

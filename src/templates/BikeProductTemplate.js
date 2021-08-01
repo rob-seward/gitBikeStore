@@ -13,23 +13,27 @@ import { Button } from '../components/Button';
 
 
 const Price = styled.div`
-margin: 1em;
 font-weight: bold;
 font-size: 2em; 
-
-
 `;
 
 const VariantsStyled = styled.div`
 display: grid;
-grid-gap: .5em;
 
 margin: 3em 0em;
+>strong{
+    margin-bottom: 10px;
+}
+
 
 >select{
     padding: .5em;
     width: 30%;
+    border-radius:0px;
     cursor: pointer;
+    :hover {
+        background-color: white;
+    }
 }
 
 @media (min-width: 768px){
@@ -42,6 +46,20 @@ const BikeProductTemplateStyled = styled.div`
         display: grid;
         grid-template-columns: 1fr;
         margin-top: 1em;
+
+        .title__description{
+            display: grid;
+            .title {
+                font-weight: bold;
+                padding-top: 2em;
+                padding-bottom: 2em;
+            }
+            .description {
+                padding-top: .5em;
+            }
+           
+        }
+        
         
 
         @media(min-width: 768px){
@@ -142,55 +160,61 @@ const handleVariantChange = (e) => {
 
    return (
     <>
-    <Button onClick={()=>navigate(-1)}>Back to products</Button>
+    
 
         <BikeProductTemplateStyled>
             <div>
-                <div>
-                <span>{props.data.shopifyProduct.title}</span>
-                <span>{props.data.shopifyProduct.description}</span>
-                
-                {product?.availableForSale && !!selectedVariant && (
-                <>
-                        {product?.variants.length > 1 && (
-                        <VariantsStyled>
-                        <strong>selection</strong>
-                        <select value={selectedVariant.id} onChange={handleVariantChange}>
-                            {product?.variants.map((variant)=>{
-                                
-                                return (
-                                        <option 
-                                        value={variant.id}
-                                        key={variant.id}>
-                                            {variant.title}
-                                            </option> 
-                                        )
+                    <div>
+                        <dic className="title__description">
+                            <div className="title">
+                                {props.data.shopifyProduct.title}
+                            </div>
+                            <div className="description">
+                                {props.data.shopifyProduct.description}
+                            </div>
+                        </dic>
+                            {product?.availableForSale && !!selectedVariant && (
+                                <>
+                                    {product?.variants.length > 1 && (
+                                    <VariantsStyled>
+                                    <strong>selection</strong>
+                                    <select value={selectedVariant.id} onChange={handleVariantChange}>
+                                        {product?.variants.map((variant)=>{
+                                            
+                                            return (
+                                                    <option 
+                                                    value={variant.id}
+                                                    key={variant.id}>
+                                                        {variant.title}
+                                                        </option> 
+                                                    )
+                                                }
+                                            )}
+                                    </select>
+                                    
+                                    </VariantsStyled>
+                                    
+                                    )}
+                                    {!! selectedVariant &&
+                                        <>
+                                            <Price>£{selectedVariant.price}</Price>
+                                            
+                                            <ProductQuantityAdder variantId={selectedVariant?.id} available={selectedVariant?.available}/>
+                                        </>
                                     }
-                                )}
-                        </select>
-                        </VariantsStyled>
-                        )}
-                        {!! selectedVariant &&
-                            <>
-                                <Price>£{selectedVariant.price}</Price>
-                                
-                                <ProductQuantityAdder variantId={selectedVariant?.id} available={selectedVariant?.available}/>
-                            </>
-                        }
-                </>
-                )
-            }
-           
-                </div>
+                                </>
+                            )}
+                    </div>
             </div>
             
             <div>
-           
                 <ImageGallery   selectedVariantImageId={selectedVariant?.image.src} key={props.data.shopifyProduct.id} id={props.data.shopifyProduct.id} title={props.data.shopifyProduct.title} images={props.data.shopifyProduct.images} />
-                
             </div>
-            
         </BikeProductTemplateStyled>
+    
+        <Button onClick={()=>navigate(-1)}>Back to products</Button>
+        
+        
         </>
        
        );
